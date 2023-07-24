@@ -1,4 +1,6 @@
 import './globals.css'
+import {Navbar, ParticlesCanvas, Sidebar} from "@/components";
+import React from "react";
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={""}>{children}</body>
+
+      <body className={""}>
+      <ParticlesCanvas/>
+      <Navbar/>
+      <Sidebar/>
+      {children}
+      </body>
     </html>
   )
 }
