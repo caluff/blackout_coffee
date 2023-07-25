@@ -1,6 +1,6 @@
 import React from 'react';
 import {PropsSidebar} from "@/types";
-import {MagnifyingGlassIcon, HomeIcon, QueueListIcon} from "@heroicons/react/24/outline";
+import {MagnifyingGlassIcon, HomeIcon, QueueListIcon,XMarkIcon} from "@heroicons/react/24/outline";
 import Link from "next/link";
 import classNames from "classnames";
 
@@ -8,11 +8,24 @@ const Sidebar = ({open, setOpen}: PropsSidebar) => {
   return (
     <div
       className={classNames({
-        " h-full lg:block fixed z-10 top-[3.8125rem] right-auto w-[19.5rem] pb-10 pr-8 overflow-auto lg:translate-x-1":true,
+        "h-full lg:block fixed z-10 top-[3.8125rem] right-auto w-[19.5rem] pb-10 pr-8 overflow-auto overflow-y-auto lg:translate-x-1":true,
+        "transition-transform .3s ease-in-out md:translate-x-o":true,
         "-translate-x-full":!open,
-        "transition-transform .3s ease-in-out md:translate-x-o":true
+        // "fixed z-10 h-full lg:block top-[3.8125rem] right-auto w-[19.5rem] pb-10 pr-8 overflow-auto overflow-y-auto":open,
       })}>
-      <nav id={"nav"} className={"lg:text-sm lg:leading-6 relative h-full bg-black"}>
+      <div className={classNames({
+        "fixed inset-0 backdrop-blur-sm lg:backdrop-blur-none":open,
+      })}></div>
+      {open &&(
+        <button type={"button"}
+                className={classNames({
+                  "absolute z-10 top-5 right-5 w-8 h-8 lg:hidden flex items-center justify-center hover:text-slate-300 text-slate-400":true,
+                })}>
+          <span className={"sr-only"}>Close Navigation</span>
+          <XMarkIcon width={24} height={24} onClick={()=>setOpen(!open)}/>
+        </button>
+      )}
+      <nav id={"nav"} className={"lg:text-sm lg:leading-6 relative h-full bg-black/80"}>
         <div className={"sticky top-0 -ml-0.5 pointer-events-none hidden lg:block"}>
           <div className={"h-10 bg-transparent"}></div>
           <div className={"bg-transparent relative pointer-events-auto ml-1"}>

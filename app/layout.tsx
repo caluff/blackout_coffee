@@ -9,14 +9,13 @@ import React, {useState} from "react";
 // }
 
 export default function RootLayout({children,}: { children: React.ReactNode }) {
-  const [showSidebar, setShowSidebar] = useState(true);
-  const [open, setOpen] = useState(true);
+  const [showSidebar, setShowSidebar] = useState(false);
   return (
     <html lang="en">
     <body className={"relative bg-fixed"}>
     {/*<ParticlesCanvas/>*/}
     <Navbar onMenuButtonClick={() => setShowSidebar((prev) => !prev)}/>
-    <div className={""}>
+    <div className={"overflow-hidden"}>
       <div className={"mx-auto px-4 sm:px-6 md:px-8"}>
           <Sidebar open={showSidebar} setOpen={setShowSidebar}/>
       <div className={"lg:pl-[19.5rem]"}>
