@@ -8,19 +8,22 @@ export const metadata = {
 }
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en">
-
-      <body className={""}>
-      <ParticlesCanvas/>
-      <Navbar/>
-      <Sidebar/>
+    <body className={"relative"}>
+    <ParticlesCanvas/>
+    <Navbar/>
+    <div className={"overflow-hidden"}>
+      <div className={"mx-auto relative z-10 xl:max-w-none"}>
+        <Sidebar/>
+      </div>
       {children}
-      </body>
+    </div>
+    </body>
     </html>
   )
 }

@@ -2,6 +2,9 @@ import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import {Breadcrumb} from "@/components/index";
+import { MagnifyingGlassIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import Blackhole from '@/public/black-hole.svg'
+
 
 const Navbar = () => {
   return (
@@ -15,8 +18,8 @@ const Navbar = () => {
               href={"/"}
             >
               <Image
-                className="w-auto h-8"
-                src={""}
+                className="w-auto h-6"
+                src={Blackhole}
                 alt={"Logo Black Out"}
               />
               <div className={"relative py-1 px-3 flex"}>
@@ -28,7 +31,7 @@ const Navbar = () => {
               className={"ml-auto text-gray-400 w-8 h-8 -my-1 flex items-center justify-center hover:text-gray-300 lg:hidden"}
             >
               <span className={"sr-only"}>Search</span>
-              {/*icon*/}
+              <MagnifyingGlassIcon className="h-6 w-6" />
             </button>
           </div>
         </div>
@@ -38,9 +41,15 @@ const Navbar = () => {
             className={"text-gray-400 hover:text-gray-300"}
           >
             <span className={"sr-only"}>Navigation</span>
-            {/*icon*/}
+            <Bars3Icon className={"w-6 h-6"}/>
           </button>
           <Breadcrumb/>
+          {/*{currentSection !== null ?*/}
+          {/*  <span className={"flex item-center text-indigo-400"}>{categoriesFetch.map(([id,text])=>(*/}
+          {/*    (id===currentSection)?text:<></>*/}
+          {/*  ))}</span>*/}
+          {/*  :*/}
+          {/*  <></>}*/}
         </div>
       </div>
     </div>
