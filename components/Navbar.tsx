@@ -5,6 +5,7 @@ import {Breadcrumb} from "@/components/index";
 import { MagnifyingGlassIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import Blackhole from '@/public/black-hole.svg'
 import {PropsNav} from "@/types";
+import {categoriesFetch} from "@/constants";
 
 
 const Navbar = (props:PropsNav) => {
@@ -46,12 +47,12 @@ const Navbar = (props:PropsNav) => {
             <Bars3Icon className={"w-6 h-6"}/>
           </button>
           <Breadcrumb/>
-          {/*{currentSection !== null ?*/}
-          {/*  <span className={"flex item-center text-indigo-400"}>{categoriesFetch.map(([id,text])=>(*/}
-          {/*    (id===currentSection)?text:<></>*/}
-          {/*  ))}</span>*/}
-          {/*  :*/}
-          {/*  <></>}*/}
+          {props.currentSection !== null ?
+            <span className={"flex item-center text-indigo-400"}>{categoriesFetch.map(([id,text])=>(
+              (id===props.currentSection)?text:<></>
+            ))}</span>
+            :
+            <></>}
         </div>
       </div>
     </div>
