@@ -1,15 +1,27 @@
-import React from "react";
-
+// Props Navbar
 export interface PropsNav{
   onMenuButtonClick():void
-  currentSection:any
 }
+// Props Sidebar
 export interface PropsSidebar{
-  open:boolean,
-  onMenuButtonClick():void
+  open?:boolean,
+  onMenuButtonClick?():void,
 }
+// Props PropsLinkOffer => Sidebar
 export interface PropsLinkOffer{
   href:string,
   children:React.ReactNode,
-  setCurrentSection:any,
+}
+// Props PropsLinkOfferIn => Sidebar => LinkOffer
+export interface PropsLinkOfferIn{
+  key:string,
+  category:Category
+  isActive:boolean,
+  index:number,
+}
+export interface Category{
+  id: string,
+  title: string,
+  route:string,
+  current:boolean,
 }

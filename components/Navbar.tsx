@@ -47,12 +47,6 @@ const Navbar = (props:PropsNav) => {
             <Bars3Icon className={"w-6 h-6"}/>
           </button>
           <Breadcrumb/>
-          {props.currentSection !== null ?
-            <span className={"flex item-center text-indigo-400"}>{categoriesFetch.map(([id,text])=>(
-              (id===props.currentSection)?text:<></>
-            ))}</span>
-            :
-            <></>}
         </div>
       </div>
     </div>
