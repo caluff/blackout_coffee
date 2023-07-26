@@ -12,19 +12,22 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <html lang="en">
-    <body className={"relative bg-fixed bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black "}>
-    {/*<ParticlesCanvas/>*/}
+    <body
+      className={"relative bg-fixed bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black "}>
+    <ParticlesCanvas/>
     <Navbar
       onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
     />
     <div className={"overflow-hidden"}>
       <div className={"mx-auto px-4 sm:px-6 md:px-8"}>
         <Sidebar
-            open={showSidebar}
-            onMenuButtonClick={()=>setShowSidebar((prev)=>!prev)}
+          open={showSidebar}
+          onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
         />
         <div className={"lg:pl-[19.5rem]"}>
-          {children}
+          <main className="pt-10">
+            {children}
+          </main>
         </div>
       </div>
     </div>
