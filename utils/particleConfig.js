@@ -86,11 +86,11 @@ export const ParticleConfig = {
     "events": {
       "onHover": {
         "enable": true,
-        "mode": "bubble"
+        "mode": "repulse"
       },
       "onclick": {
         "enable": true,
-        "mode": "repulse"
+        "mode": "bumble"
       },
       "resize": true
     },
@@ -111,7 +111,7 @@ export const ParticleConfig = {
 
       },
       "repulse": {
-        "distance": 400,
+        "distance": 200,
         "duration": 0.8
       },
       "push": {

@@ -4,6 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import Breadcrumb from "@/components/Breadcrumb";
 import LinkOffer from "@/components/LinkOffer";
 import LinkOfferIn from "@/components/LinkOfferIn";
+import FetchPost from "@/components/FetchPost";
 export {
   ParticlesCanvas,
   Navbar,
@@ -11,4 +12,5 @@ export {
   Breadcrumb,
   LinkOffer,
   LinkOfferIn,
+  FetchPost,
 }

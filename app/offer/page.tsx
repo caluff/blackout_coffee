@@ -1,5 +1,6 @@
 import {categoriesFetch} from "@/constants";
 import {Suspense} from "react";
+import {FetchPost} from "@/components";
 
 
 const Offer = () => {
@@ -13,8 +14,8 @@ const Offer = () => {
             </h1>
           </div>
           <Suspense fallback={"loading..."}>
-            <div className={"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-4"}>
-              {/*<FetchPost idTitle={id}/>*/}
+            <div className={"grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 pb-4"}>
+              <FetchPost idTitle={id}/>
             </div>
           </Suspense>
         </section>

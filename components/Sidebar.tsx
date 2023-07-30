@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+"use client"
+import {useState} from 'react';
 import {Category, PropsSidebar} from "@/types";
 import {MagnifyingGlassIcon, HomeIcon, QueueListIcon, XMarkIcon} from "@heroicons/react/24/outline";
 import Link from "next/link";
@@ -78,7 +79,7 @@ const Sidebar = (props: PropsSidebar) => {
   return (
     <>
       {props.open && (
-        <div className={"fixed z-20 inset-0 overflow-y-auto lg:hidden"}>
+        <div className={"fixed z-50 inset-0 overflow-y-auto lg:hidden"}>
           <div className={"fixed inset-0 bg-black/60 backdrop-blur-sm"}></div>
           <div className={"relative bg-black/60 p-6 w-80 max-w-[calc(100%-3rem)]"}>
             <button type={"button"}
