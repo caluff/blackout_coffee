@@ -12,9 +12,9 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      fontFamily: {
-        gin: ['gins', 'sans-serif'],
-      },
+      // fontFamily: {
+      //   'gin': ['gins', 'sans-serif'],
+      // },
     },
   },
   plugins: [

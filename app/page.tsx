@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from "next/link";
 
 export default function Home() {
@@ -6,8 +5,12 @@ export default function Home() {
     <header className={"relative"}>
       <div className={"relative"}>
         <h1
-          className={"text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl text-center tracking-tight uppercase animate-fade-down animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}>
-          Bienvenidos al Blackout
+          className={"uppercase text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl text-center tracking-tight animate-fade-down animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}>
+          Bienvenidos al
+          <span
+            className={"component animate-pulse animate-infinite animate-duration-[1500ms] animate-delay-[1300ms] animate-ease-linear"}>
+            &nbsp;Blackout
+          </span>
         </h1>
         <div className={"mt-6 sm:mt-10 flex-row sm:flex justify-center space-x-6 text-sm"}>
           <Link
@@ -40,6 +43,17 @@ export default function Home() {
             </li>
           </ul>
         </div>
+        <div className={"justify-center gap-4 flex"}>
+          <h1
+            className={"text-white animate-fade-left animate-once animate-duration-[1300ms] animate-delay-[1300ms] animate-ease-linear"}>
+            Horarios:
+          </h1>
+          <h1
+            className={"text-white animate-fade-left animate-once animate-duration-[1300ms] animate-delay-[1300ms] animate-ease-linear"}>
+            [horarios: 000000000000000000]
+          </h1>
+        </div>
+
       </div>
     </header>
 

@@ -13,5 +13,33 @@
 }
 /*@font-face {*/
 /*  font-family: 'gins';*/
-/*  src: url('public/fonts/Gin.woff2') format('woff2');*/
+/*  src: url('/public/fonts/Starjedi.woff2') format('woff2');*/
 /*}*/
+.component {
+  background: #d1d5db;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: animate-background 5s infinite;
+}
+
+@keyframes animate-background {
+  0% {
+    background: #6b7280;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  50% {
+    background: #111827;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  100% {
+    background: #6b7280;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
