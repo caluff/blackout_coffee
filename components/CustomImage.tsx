@@ -1,7 +1,7 @@
 "use client"
 import {useState} from "react";
 import Image from "next/image";
-import no_picture from '@/public/no_picture.jpg'
+import no_picture from '@/public/no_picture.webp'
 
 interface CustomImageProps{
   src: string
