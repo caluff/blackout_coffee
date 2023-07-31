@@ -22,10 +22,11 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
       <div className={"mx-auto px-4 sm:px-6 md:px-8"}>
         <Sidebar
           open={showSidebar}
+          noOpen={setShowSidebar}
           onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
         />
         <div className={"lg:pl-[19.5rem]"}>
-          <main className="pt-10">
+          <main className="pt-32 lg:pt-24">
             {children}
           </main>
         </div>

@@ -1,7 +1,14 @@
 import React from 'react';
-import {PropsLinkOfferIn} from "@/types";
+import {Category} from "@/types";
 import classNames from "classnames";
 
+interface PropsLinkOfferIn{
+  onMenuButtonClick?():void,
+  key:string,
+  category:Category
+  isActive:boolean,
+  index:number,
+}
 const LinkOfferIn = (props: PropsLinkOfferIn) => {
   return (
     <li
@@ -11,6 +18,7 @@ const LinkOfferIn = (props: PropsLinkOfferIn) => {
           "block border-l pl-4 -ml-px border-transparent hover:border-slate-500 text-slate-400 hover:text-slate-300": !props.isActive,
           "block border-l pl-4 -ml-px text-indigo-400 border-current font-semibold": props.isActive
         })}
+        onClick={props.onMenuButtonClick}
       >
         {props.category.title}
       </div>

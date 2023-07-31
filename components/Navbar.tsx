@@ -5,13 +5,11 @@ import {Breadcrumb} from "@/components/index";
 import { MagnifyingGlassIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import Blackhole from '@/public/black-hole.svg'
 import {PropsNav} from "@/types";
-import {categoriesFetch} from "@/constants";
-
 
 const Navbar = (props:PropsNav) => {
   return (
     <div
-      className={"sticky z-10 w-full backdrop-blur-lg flex-none transition-colors duration-500 lg:border-b border-slate-50/[0.06] bg-transparent"}>
+      className={"fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-lg flex-none transition-colors duration-500 lg:border-b border-slate-50/[0.06] bg-transparent"}>
       <div className={"mx-auto"}>
         <div className={"py-4 border-b lg:px-8 lg:border-0 border-slate-300/10 mx-4 lg:mx-0"}>
           <div className={"relative flex items-center"}>
