@@ -1,30 +1,39 @@
 import Link from "next/link";
+import {ClockIcon, PhoneIcon, MapIcon} from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
     <header className={"relative"}>
       <div className={"relative"}>
         <h1
-          className={"uppercase text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl text-center tracking-tight animate-fade-down animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}>
+          className={"mb-8 uppercase text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl text-center tracking-tight animate-fade-down animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}>
           Bienvenidos al
           <span
             className={"component animate-pulse animate-infinite animate-duration-[1500ms] animate-delay-[1300ms] animate-ease-linear"}>
             &nbsp;Blackout
           </span>
         </h1>
-        <div className={"mt-6 sm:mt-10 flex-row sm:flex justify-center space-x-6 text-sm"}>
+          <p
+            className={"indent-8 tracking-wide text-justify text-gray-400/80 text-sm lg:mx-80 animate-fade-right animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-linear"}>
+            dalsdjask ldjasljoac jioaifrojgero gjergergfrgdf gdfgdfg dfghpt
+            hjdal sdjas kldjasljoacj ioaifrojgerogjerge rgfrgdfgd fgdfgdfghpt
+            hjdal sdjaskld jasljoacjioaifr ojgerogje rgergfrgdfgd fgdfgdfghpth
+            jdals djaskl djasljoacji oaifrojger ogjergergfrgdfg dfgdfgdfghpthjd
+            alsdja skldjas ljoacjioa ifrojgerogje rgergfrgdfgdfgd fgdfghpthj
+          </p>
+        <div className={"mt-8 sm:mt-10 flex-row sm:flex justify-center space-x-6 text-sm animate-ping animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-linear animate-reverse"}>
           <Link
             className={"mb-6 shadow-lg shadow-sky-500/50 bg-sky-500 hover:bg-sky-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-white font-semibold h-12 px-12 rounded-lg w-full flex items-center justify-center sm:w-auto animate-fade-right animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}
             href={"/offer"}>
             Get Offer
           </Link>
-          <ul className="sm:flex items-center gap-6 md:gap-8">
+          <ul className="flex items-center gap-6 md:gap-8 justify-center">
             <li>
               <Link
                 href={"/"}
                 rel={""}
                 target={""}
-                className={"text-sky-500 transition hover:sky-400 animate-fade animate-once animate-duration-[2600ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}
+                className={"text-sky-500 transition hover:sky-400"}
               >
                 <span className="sr-only">Instagram</span>
                 <svg
@@ -41,19 +50,69 @@ export default function Home() {
                 </svg>
               </Link>
             </li>
+            <li>
+              <Link
+                href={"/"}
+                rel={""}
+                target={""}
+                className={"text-sky-500 transition hover:sky-400"}
+              >
+                <PhoneIcon
+                  className="h-6 w-6 text-sky-500 mb-4 animate-bounce hover:shadow-lg hover:shadow-sky-500/50"/>
+              </Link>
+            </li>
           </ul>
         </div>
-        <div className={"justify-center gap-4 flex"}>
-          <h1
-            className={"text-white animate-fade-left animate-once animate-duration-[1300ms] animate-delay-[1300ms] animate-ease-linear"}>
-            Horarios:
-          </h1>
-          <h1
-            className={"text-white animate-fade-left animate-once animate-duration-[1300ms] animate-delay-[1300ms] animate-ease-linear"}>
-            [horarios: 000000000000000000]
-          </h1>
+        {/*Horario*/}
+        <div
+          className={"justify-center gap-2 flex flex-col md:flex-row items-center mt-12 animate-fade-left animate-once animate-duration-[1300ms] animate-delay-[1300ms] animate-ease-linear"}>
+          {/*panel izquierdo*/}
+          <div className={"flex gap-2 items-center"}>
+            <h1 className={"uppercase text-white font-bold"}>
+              Horarios:
+            </h1>
+            <ClockIcon className="h-8 w-8 text-red-600"/>
+            <h2 className={"text-red-600 font-semibold"}>
+              Cerrado
+              <span className={"text-gray-400/50"}> · Abre</span>
+            </h2>
+          </div>
+          {/*panel gis derecho*/}
+          <div
+            className={"bg-gray-700/60 py-2 px-3 rounded-full flex justify-between w-full md:w-96 items-center"}>
+            <h4
+              className={"uppercase text-sm text-white"}>
+              Todos los dias
+            </h4>
+            <h4
+              className={"uppercase text-xs text-white"}>
+              11:00 AM - 0:00 AM
+            </h4>
+          </div>
         </div>
-
+        {/*Ubicacion*/}
+        <div
+          className={"justify-center gap-2 flex flex-col md:flex-row items-center mt-12 animate-fade-left animate-once animate-duration-[1300ms] animate-delay-[1300ms] animate-ease-linear"}>
+          {/*panel izquierdo*/}
+          <div className={"flex gap-2 items-center"}>
+            <h1 className={"uppercase text-white font-bold"}>
+              Ubicacion:
+            </h1>
+            <MapIcon className="h-8 w-8 text-gray-500"/>
+          </div>
+          {/*panel gis derecho*/}
+          <div className={"pl-5 bg-gray-700/60 py-2 px-3 rounded-full w-full md:w-[31rem] text-start"}>
+            <h4
+              className={"text-sm text-white"}>
+              SAN MIGUEL <span className={"text-green-400"}>#000</span> <span
+              className={"text-xs text-gray-300/70"}>e/</span>MACEO Y UNION
+            </h4>
+            <h4
+              className={"uppercase text-xs text-gray-400/70 mt-1"}>
+              Santa Clara, Villa Clara
+            </h4>
+          </div>
+        </div>
       </div>
     </header>
 
