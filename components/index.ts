@@ -6,6 +6,7 @@ import LinkOffer from "@/components/LinkOffer";
 import LinkOfferIn from "@/components/LinkOfferIn";
 import FetchPost from "@/components/FetchPost";
 import Nav from "@/components/Nav";
+import {LayoutProvider} from "@/components/LayoutProvider";
 export {
   ParticlesCanvas,
   Navbar,
@@ -14,5 +15,6 @@ export {
   LinkOffer,
   LinkOfferIn,
   FetchPost,
-  Nav
+  Nav,
+  LayoutProvider,
 }

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import {ClockIcon, PhoneIcon, MapIcon} from "@heroicons/react/24/outline";
+import {ClockIcon, PhoneIcon, MapIcon, Cog6ToothIcon} from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
     <header className={"relative"}>
-      <div className={"relative"}>
+      <div className={"relative flex flex-col justify-center items-center"}>
         <h1
           className={"mb-8 uppercase text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl text-center tracking-tight animate-fade-down animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}>
           Bienvenidos al
@@ -115,6 +115,13 @@ export default function Home() {
             </h4>
           </div>
         </div>
+        <Link
+          className={"group relative pl-16 border-2 border-black w-32 mt-6 bg-black hover:bg-white focus:outline-none text-white hover:text-black font-semibold text-xs h-8 px-12 rounded-full flex items-center justify-center"}
+          href={"/admin"}>
+          <Cog6ToothIcon className="h-5 w-5 text-white absolute left-3 group-hover:text-black"/>
+          Administrar
+        </Link>
+
       </div>
     </header>
 
