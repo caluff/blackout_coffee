@@ -5,7 +5,7 @@ const Admin = () => {
 
   return (
     <section className="backdrop-blur-sm">
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto max-w-7xl">
         <h2 className="mb-4 text-xl font-bold text-white">Añadir nuevo producto</h2>
         <form action="#">
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">

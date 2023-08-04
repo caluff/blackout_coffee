@@ -1,7 +1,7 @@
 export const ParticleConfig = {
   "particles": {
     "number": {
-      "value": 50,
+      "value": 40,
       "density": {
         "enable": true,
         "value_area": 700
@@ -32,7 +32,7 @@ export const ParticleConfig = {
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 0.4,
       "random": false,
       "anim": {
         "enable": false,
@@ -55,7 +55,7 @@ export const ParticleConfig = {
       "enable": true,
       "distance": 150,
       "color": "#4b5563",
-      "opacity": 0.5,
+      "opacity": 0.2,
       "width": 1,
        "triangles": {
          "enable": true,
@@ -65,7 +65,7 @@ export const ParticleConfig = {
     },
     "move": {
       "enable": true,
-      "speed": 2,
+      "speed": 1,
       "direction": "none",
       "random": false,
       "straight": false,

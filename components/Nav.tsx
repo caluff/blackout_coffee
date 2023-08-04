@@ -40,7 +40,7 @@ const Nav = (props:NavProps) => {
                 onClick={handleClick}
                 >
             <div
-              className={"shadow-lg shadow-sky-500/50 mr-4 rounded-md ring-0 ring-slate-900/5 group-hover:ring-slate-900/10 group-hover:bg-sky-500 bg-slate-700"}>
+              className={"mr-4 rounded-md ring-0 ring-slate-900/5 group-hover:ring-slate-900/10 group-hover:bg-sky-500 bg-slate-700"}>
               <HomeIcon width={24} height={24}/>
             </div>
             Home
@@ -51,7 +51,7 @@ const Nav = (props:NavProps) => {
                 onClick={() => setOffer(true)}
                 className={"group flex items-center lg:text-sm lg:leading-6 mb-4 font-medium text-indigo-400 focus:animate-wiggle focus:animate-once focus:animate-duration-1000 focus:animate-delay-0 focus:animate-ease-in-out focus:animate-normal focus:animate-fill-forwards"}>
             <div
-              className={"shadow-lg shadow-indigo-500/50 mr-4 rounded-md ring-0 ring-slate-900/5 group-hover:ring-slate-900/10 group-hover:bg-indigo-500 bg-slate-800"}>
+              className={" mr-4 rounded-md ring-0 ring-slate-900/5 group-hover:ring-slate-900/10 group-hover:bg-indigo-500 bg-slate-800"}>
               <QueueListIcon width={24} height={24}/>
             </div>
             Offer

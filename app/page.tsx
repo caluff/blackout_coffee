@@ -13,6 +13,7 @@ export default function Home() {
             &nbsp;Blackout
           </span>
         </h1>
+        <div className={"mx-auto max-w-7xl"}>
           <p
             className={"indent-8 tracking-wide text-justify text-gray-400/80 text-sm lg:mx-80 animate-fade-right animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-linear"}>
             dalsdjask ldjasljoac jioaifrojgero gjergergfrgdf gdfgdfg dfghpt
@@ -21,6 +22,7 @@ export default function Home() {
             jdals djaskl djasljoacji oaifrojger ogjergergfrgdfg dfgdfgdfghpthjd
             alsdja skldjas ljoacjioa ifrojgerogje rgergfrgdfgdfgd fgdfghpthj
           </p>
+        </div>
         <div className={"mt-8 sm:mt-10 flex-row sm:flex justify-center space-x-6 text-sm animate-ping animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-linear animate-reverse"}>
           <Link
             className={"mb-6 shadow-lg shadow-sky-500/50 bg-sky-500 hover:bg-sky-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-white font-semibold h-12 px-12 rounded-lg w-full flex items-center justify-center sm:w-auto animate-fade-right animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}
