@@ -5,7 +5,7 @@ const LayoutOffer = (props:{
   admin:React.ReactNode;
 }) => {
   return (
-    <div className={"grid grid-cols-2 gap-4"}>
+    <div className={"grid md:grid-cols-2 grid-rows-2 gap-4"}>
       {props.children}
       {props.admin}
     </div>

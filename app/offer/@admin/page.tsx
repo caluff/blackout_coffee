@@ -18,7 +18,7 @@ const Admin = () => {
                 name="name"
                 id="name"
                 className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
-                placeholder="Type product name"
+                placeholder="Nombre del producto"
                 // required=""
               />
             </div>
@@ -88,9 +88,13 @@ const Admin = () => {
                   <div className={"pb-6 pt-5 justify-center items-center flex-col flex"}>
                     <CloudArrowUpIcon className="h-10 w-10 text-gray-400 mb-3 block align-middle"/>
                     <p className={"text-sm leading-5 mb-2 text-gray-400"}>
-                      <span className={"font-semibold"}>Click to upload</span> or drag and drop
+                      <span className={"font-semibold"}>
+                        Click to upload
+                      </span> or drag and drop
                     </p>
-                    <p className={"mb-4 text-gray-400 text-xs leading-4"}>Max. File Size: 30mb</p>
+                    <p className={"mb-4 text-gray-400 text-xs leading-4"}>
+                      Max. File Size: 1mb
+                    </p>
                     <button
                       type={"button"}
                       className={"text-white bg-primary-600 font-medium text-xs leading-4 items-center px-3 py-2 rounded-lg focus:ring-primary-900 hover:bg-primary-800"}
