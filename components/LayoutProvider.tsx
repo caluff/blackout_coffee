@@ -1,12 +1,12 @@
 "use client"
 import {usePathname} from "next/navigation";
-import React from "react";
+import Login from '@/app/login/page'
 
 export const LayoutProvider = ({ children, }: { children: React.ReactNode }) => {
   const pathname = usePathname();
   return (
     <>
-      {pathname === "/admin" ? <h1>Welcome to Posts page!</h1>: children}
+      {pathname === "/login" ? <Login/>: children}
     </>
   )
 };

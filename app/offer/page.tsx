@@ -15,8 +15,7 @@ const Offer = () => {
           </div>
           <Suspense fallback={"loading..."}>
             <div className={"grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 pb-4"}>
-              {/*<FetchPost idTitle={id}/>*/}
-              123
+              <FetchPost idTitle={id}/>
             </div>
           </Suspense>
         </section>

@@ -17,7 +17,7 @@ const Admin = () => {
                 type="text"
                 name="name"
                 id="name"
-                className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
+                className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:shadow-outline"
                 placeholder="Nombre del producto"
                 // required=""
               />
@@ -30,7 +30,7 @@ const Admin = () => {
               </label>
               <select
                 id="category"
-                className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500">
+                className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:shadow-outline">
                 {/*// @ts-ignore*/}
                 <option selected="">Selecciona Categoría</option>
                 <option value="CC">Cocteles de la Casa</option>
@@ -55,7 +55,7 @@ const Admin = () => {
                   type="number"
                   name="price"
                   id="price"
-                  className="pl-9 border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
+                  className="pl-9 border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:shadow-outline"
                   placeholder="400"
                   // required=""
                 />
@@ -71,7 +71,7 @@ const Admin = () => {
                 id="description"
                 // @ts-ignore
                 rows="8"
-                className="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
+                className="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:shadow-outline"
                 placeholder="Tu descripción aquí">
 
               </textarea>

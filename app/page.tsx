@@ -117,7 +117,7 @@ export default function Home() {
         </div>
         <Link
           className={"group relative pl-16 border-2 border-black w-32 mt-6 bg-black hover:bg-white focus:outline-none text-white hover:text-black font-semibold text-xs h-8 px-12 rounded-full flex items-center justify-center"}
-          href={"/admin"}>
+          href={"/login"}>
           <Cog6ToothIcon className="h-5 w-5 text-white absolute left-3 group-hover:text-black"/>
           Administrar
         </Link>
