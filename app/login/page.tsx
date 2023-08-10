@@ -1,6 +1,6 @@
 import {ArrowSmallLeftIcon} from "@heroicons/react/24/outline";
 import Image from "next/image";
-import bg_admin from '@/public/bg_admin.jpg'
+import bg_admin from '@/public/bg_admin.webp'
 import Link from "next/link";
 
 const Login = () => {
