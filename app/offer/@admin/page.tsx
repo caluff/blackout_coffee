@@ -1,4 +1,4 @@
-import React from "react";
+
 import {CloudArrowUpIcon, CurrencyDollarIcon} from "@heroicons/react/24/outline";
 
 const Admin = () => {

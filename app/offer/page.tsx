@@ -2,7 +2,6 @@ import {categoriesFetch} from "@/constants";
 import {Suspense} from "react";
 import {FetchPost} from "@/components";
 
-
 const Offer = () => {
   return (
     <div className={"flex flex-col text-gray-200"}>

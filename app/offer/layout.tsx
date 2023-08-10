@@ -1,5 +1,3 @@
-import React from 'react';
-
 const LayoutOffer = (props:{
   children:React.ReactNode;
   admin:React.ReactNode;

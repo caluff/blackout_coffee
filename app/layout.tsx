@@ -1,7 +1,6 @@
 "use client"
 import './globals.css'
 import {Navbar, ParticlesCanvas, Sidebar} from "@/components";
-import React, {useState} from "react";
 import {LayoutProvider} from "@/components/LayoutProvider";
 import {store} from '@/utils/store'
 import {Provider} from 'react-redux'
@@ -12,24 +11,17 @@ import {Provider} from 'react-redux'
 // }
 
 export default function RootLayout({children,}: { children: React.ReactNode }) {
-  const [showSidebar, setShowSidebar] = useState(false);
   return (
     <html lang="en">
     <body
       className={"relative bg-fixed bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black "}>
     <Provider store={store}>
       <LayoutProvider>
-        {/*<ParticlesCanvas/>*/}
-        <Navbar
-          onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
-        />
+        <ParticlesCanvas/>
+        <Navbar/>
         <div className={"overflow-hidden"}>
           <div className={"mx-auto px-4 sm:px-6 md:px-8"}>
-            <Sidebar
-              open={showSidebar}
-              noOpen={setShowSidebar}
-              onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
-            />
+            <Sidebar/>
             <div className={"lg:pl-[19.5rem]"}>
               <main className="pt-32 lg:pt-24">
                 {children}

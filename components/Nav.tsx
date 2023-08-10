@@ -6,20 +6,17 @@ import {categoriesRoute} from "@/constants";
 import {Category} from "@/types";
 import {LinkOffer, LinkOfferIn} from "@/components/index";
 
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@/utils/store";
+import { useAppSelector, useAppDispatch } from '@/utils/hooks'
 import {trueOffer,falseOffer} from "@/features/offer/offerSlice";
+import {falseSidebar} from "@/features/sidebar/sidebarSlice";
 
-interface NavProps{
-  noOpen?(open:boolean): void,
-  onMenuButtonClick?():void,
-}
-const Nav = (props:NavProps) => {
-  const valueOffer = useSelector((state:RootState)=>state.offer.value)
-  const dispatch = useDispatch()
+
+const Nav = () => {
+  const valueOffer = useAppSelector(state=>state.offer.value)
+  const dispatch = useAppDispatch()
   let pathname = usePathname();
   const handleClick = () => {
-    props.onMenuButtonClick?.();
+    dispatch(falseSidebar())
     dispatch(falseOffer())
   }
   return (
@@ -72,7 +69,6 @@ const Nav = (props:NavProps) => {
                 return (
                   <LinkOffer key={category.id} href={category.route}>
                     <LinkOfferIn
-                      onMenuButtonClick={() => props.noOpen?.(false)}
                       key={category.id}
                       category={category}
                       isActive={isActive}

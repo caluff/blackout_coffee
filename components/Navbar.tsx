@@ -4,9 +4,13 @@ import Image from "next/image";
 import {Breadcrumb} from "@/components/index";
 import { MagnifyingGlassIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import Blackhole from '@/public/black-hole.svg'
-import {PropsNav} from "@/types";
 
-const Navbar = (props:PropsNav) => {
+
+import {useAppDispatch } from '@/utils/hooks'
+import {trueSidebar} from "@/features/sidebar/sidebarSlice";
+
+const Navbar = () => {
+  const dispatch = useAppDispatch()
   return (
     <div
       className={"fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-lg flex-none transition-colors duration-500 lg:border-b border-slate-50/[0.06] bg-transparent"}>
@@ -39,7 +43,7 @@ const Navbar = (props:PropsNav) => {
           <button
             type="button"
             className={"text-gray-400 hover:text-gray-300"}
-            onClick={props.onMenuButtonClick}
+            onClick={() => dispatch(trueSidebar())}
           >
             <span className={"sr-only"}>Navigation</span>
             <Bars3Icon className={"w-6 h-6"}/>

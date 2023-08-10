@@ -1,9 +1,13 @@
+"use client"
 import Link from "next/link";
 import {ClockIcon, PhoneIcon, MapIcon, Cog6ToothIcon} from "@heroicons/react/24/outline";
 import {Carousel} from '@/components/index'
 import {NextPage} from "next";
+import {useDispatch} from "react-redux";
+import {trueOffer} from "@/features/offer/offerSlice";
 
 const Home : NextPage=()=>{
+  const dispatch = useDispatch()
   return (
     <header className={"relative"}>
       <div className={"relative flex flex-col justify-center items-center"}>
@@ -19,7 +23,9 @@ const Home : NextPage=()=>{
           className={"my-4 sm:mt-10 flex-row sm:flex justify-center space-x-6 text-sm animate-ping animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-linear animate-reverse"}>
           <Link
             className={"mb-6 shadow-lg shadow-sky-500/50 bg-sky-500 hover:bg-sky-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-white font-semibold h-12 px-12 rounded-lg w-full flex items-center justify-center sm:w-auto animate-fade-right animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}
-            href={"/offer"}>
+            href={"/offer"}
+            onClick={()=>dispatch(trueOffer())}
+          >
             Get Offer
           </Link>
         </div>
