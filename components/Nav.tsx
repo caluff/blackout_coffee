@@ -1,24 +1,27 @@
 "use client"
 import {usePathname} from "next/navigation";
-import {useState} from "react";
 import {HomeIcon, MagnifyingGlassIcon, QueueListIcon} from "@heroicons/react/24/outline";
 import Link from "next/link";
 import {categoriesRoute} from "@/constants";
 import {Category} from "@/types";
 import {LinkOffer, LinkOfferIn} from "@/components/index";
 
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "@/utils/store";
+import {trueOffer,falseOffer} from "@/features/offer/offerSlice";
+
 interface NavProps{
   noOpen?(open:boolean): void,
   onMenuButtonClick?():void,
 }
 const Nav = (props:NavProps) => {
+  const valueOffer = useSelector((state:RootState)=>state.offer.value)
+  const dispatch = useDispatch()
   let pathname = usePathname();
-  const [offer, setOffer] = useState(false);
   const handleClick = () => {
     props.onMenuButtonClick?.();
-    setOffer(false);
+    dispatch(falseOffer())
   }
-
   return (
     <nav id={"nav"}
          className={"lg:text-sm lg:leading-6 relative h-full bg-transparent lg:border-r border-gray-50/[0.06]"}>
@@ -48,7 +51,7 @@ const Nav = (props:NavProps) => {
         </li>
         <li>
           <Link href={"/offer"}
-                onClick={() => setOffer(true)}
+                onClick={() => dispatch(trueOffer())}
                 className={"group flex items-center lg:text-sm lg:leading-6 mb-4 font-medium text-indigo-400 focus:animate-wiggle focus:animate-once focus:animate-duration-1000 focus:animate-delay-0 focus:animate-ease-in-out focus:animate-normal focus:animate-fill-forwards"}>
             <div
               className={" mr-4 rounded-md ring-0 ring-slate-900/5 group-hover:ring-slate-900/10 group-hover:bg-indigo-500 bg-slate-800"}>
@@ -57,7 +60,7 @@ const Nav = (props:NavProps) => {
             Offer
           </Link>
         </li>
-        {offer && (
+        {valueOffer && (
           <li className={"mt-12 lg:mt-8"}>
             <h5
               className={"mb-8 lg:mb-3 font-semibold text-slate-200 animate-fade-down animate-once animate-duration-[1500ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}>

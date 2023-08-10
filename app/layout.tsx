@@ -3,6 +3,8 @@ import './globals.css'
 import {Navbar, ParticlesCanvas, Sidebar} from "@/components";
 import React, {useState} from "react";
 import {LayoutProvider} from "@/components/LayoutProvider";
+import {store} from '@/utils/store'
+import {Provider} from 'react-redux'
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -15,26 +17,28 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
     <html lang="en">
     <body
       className={"relative bg-fixed bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black "}>
-    <LayoutProvider>
-      {/*<ParticlesCanvas/>*/}
-      <Navbar
-        onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
-      />
-      <div className={"overflow-hidden"}>
-        <div className={"mx-auto px-4 sm:px-6 md:px-8"}>
-          <Sidebar
-            open={showSidebar}
-            noOpen={setShowSidebar}
-            onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
-          />
-          <div className={"lg:pl-[19.5rem]"}>
-            <main className="pt-32 lg:pt-24">
-              {children}
-            </main>
+    <Provider store={store}>
+      <LayoutProvider>
+        {/*<ParticlesCanvas/>*/}
+        <Navbar
+          onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
+        />
+        <div className={"overflow-hidden"}>
+          <div className={"mx-auto px-4 sm:px-6 md:px-8"}>
+            <Sidebar
+              open={showSidebar}
+              noOpen={setShowSidebar}
+              onMenuButtonClick={() => setShowSidebar((prev) => !prev)}
+            />
+            <div className={"lg:pl-[19.5rem]"}>
+              <main className="pt-32 lg:pt-24">
+                {children}
+              </main>
+            </div>
           </div>
         </div>
-      </div>
-    </LayoutProvider>
+      </LayoutProvider>
+    </Provider>
     </body>
     </html>
   )
