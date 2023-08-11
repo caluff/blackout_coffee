@@ -9,6 +9,7 @@ import {LinkOffer, LinkOfferIn} from "@/components/index";
 import { useAppSelector, useAppDispatch } from '@/utils/hooks'
 import {trueOffer,falseOffer} from "@/features/offer/offerSlice";
 import {falseSidebar} from "@/features/sidebar/sidebarSlice";
+import {onCurrentSection} from "@/features/currentSection/currentSectionSlice";
 
 
 const Nav = () => {
@@ -18,6 +19,7 @@ const Nav = () => {
   const handleClick = () => {
     dispatch(falseSidebar())
     dispatch(falseOffer())
+    dispatch(onCurrentSection())
   }
   return (
     <nav id={"nav"}
@@ -67,7 +69,7 @@ const Nav = () => {
               {categoriesRoute.map((category: Category, index: number) => {
                 const isActive = pathname.startsWith(`/offer/#${category.id}`);
                 return (
-                  <LinkOffer key={category.id} href={category.route}>
+                  <LinkOffer key={category.id} href={category.route} >
                     <LinkOfferIn
                       key={category.id}
                       category={category}

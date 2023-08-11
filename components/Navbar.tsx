@@ -4,12 +4,13 @@ import Image from "next/image";
 import {Breadcrumb} from "@/components/index";
 import { MagnifyingGlassIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import Blackhole from '@/public/black-hole.svg'
+import {categoriesFetch} from "@/constants";
 
-
-import {useAppDispatch } from '@/utils/hooks'
+import {useAppDispatch, useAppSelector} from '@/utils/hooks'
 import {trueSidebar} from "@/features/sidebar/sidebarSlice";
 
 const Navbar = () => {
+  const valueCurrentSection = useAppSelector(state=>state.currentSection.value)
   const dispatch = useAppDispatch()
   return (
     <div
@@ -49,6 +50,12 @@ const Navbar = () => {
             <Bars3Icon className={"w-6 h-6"}/>
           </button>
           <Breadcrumb/>
+          {valueCurrentSection !== "" ?
+            <span className={"flex item-center text-indigo-400"}>{categoriesFetch.map(([id,text])=>(
+              (id===valueCurrentSection)?text:""
+            ))}</span>
+            :
+            ""}
         </div>
       </div>
     </div>

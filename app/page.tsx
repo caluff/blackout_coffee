@@ -3,11 +3,11 @@ import Link from "next/link";
 import {ClockIcon, PhoneIcon, MapIcon, Cog6ToothIcon} from "@heroicons/react/24/outline";
 import {Carousel} from '@/components/index'
 import {NextPage} from "next";
-import {useDispatch} from "react-redux";
 import {trueOffer} from "@/features/offer/offerSlice";
+import {useAppDispatch} from "@/utils/hooks";
 
 const Home : NextPage=()=>{
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   return (
     <header className={"relative"}>
       <div className={"relative flex flex-col justify-center items-center"}>
