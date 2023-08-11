@@ -5,9 +5,13 @@ import {Carousel} from '@/components/index'
 import {NextPage} from "next";
 import {trueOffer} from "@/features/offer/offerSlice";
 import {useAppDispatch} from "@/utils/hooks";
+import {setCurrentSection} from "@/features/currentSection/currentSectionSlice";
 
 const Home : NextPage=()=>{
   const dispatch = useAppDispatch()
+  function handleClick() {
+    dispatch(trueOffer());
+  }
   return (
     <header className={"relative"}>
       <div className={"relative flex flex-col justify-center items-center"}>
@@ -24,7 +28,7 @@ const Home : NextPage=()=>{
           <Link
             className={"mb-6 shadow-lg shadow-sky-500/50 bg-sky-500 hover:bg-sky-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-white font-semibold h-12 px-12 rounded-lg w-full flex items-center justify-center sm:w-auto animate-fade-right animate-once animate-duration-[1300ms] animate-delay-0 animate-ease-in-out animate-normal animate-fill-forwards"}
             href={"/offer"}
-            onClick={()=>dispatch(trueOffer())}
+            onClick={handleClick}
           >
             Get Offer
           </Link>
@@ -117,7 +121,7 @@ const Home : NextPage=()=>{
           </div>
         </div>
         <Link
-          className={"group relative pl-16 border-2 border-black w-32 mt-6 bg-black hover:bg-white focus:outline-none text-white hover:text-black font-semibold text-xs h-8 px-12 rounded-full flex items-center justify-center"}
+          className={"group mb-4 relative pl-16 border-2 border-black w-32 mt-6 bg-black hover:bg-white focus:outline-none text-white hover:text-black font-semibold text-xs h-8 px-12 rounded-full flex items-center justify-center"}
           href={"/login"}>
           <Cog6ToothIcon className="h-5 w-5 text-white absolute left-3 group-hover:text-black"/>
           Administrar

@@ -19,7 +19,7 @@ const Carousel = () => {
   };
 
   return (
-    <section className="backdrop-blur-lg rounded-2xl animate-fade animate-duration-[1300ms] animate-delay-[1300ms] animate-ease-in-out">
+    <section className="backdrop-blur-lg lg:mx-auto lg:max-w-3xl rounded-2xl animate-fade animate-duration-[1300ms] animate-delay-[1300ms] animate-ease-in-out">
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:me-0 lg:pe-0 lg:ps-8">
         <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16">
           <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
@@ -65,7 +65,7 @@ const Carousel = () => {
             </Swipe>
           </div>
         </div>
-        <div className="relative flex sm:justify-center p-2 ">
+        <div className="relative flex justify-center p-2 ">
           {images.map((_, index) => {
             return (
               <div

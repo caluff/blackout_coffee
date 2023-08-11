@@ -28,7 +28,7 @@ const LinkOffer = (props: PropsLinkOffer) => {
       observer.observe(elem)
     })
     return () => observer.disconnect()
-  }, [dispatch])
+  }, [])
 
   return (
     <Link href={props.href}
