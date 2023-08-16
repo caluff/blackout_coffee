@@ -4,6 +4,7 @@ import {Navbar, ParticlesCanvas, Sidebar} from "@/components";
 import {LayoutProvider} from "@/components/LayoutProvider";
 import {store} from '@/utils/store'
 import {Provider} from 'react-redux'
+import {SessionProvider} from "next-auth/react";
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -15,6 +16,7 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
     <html lang="en">
     <body
       className={"relative bg-fixed bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black "}>
+    <SessionProvider>
     <Provider store={store}>
       <LayoutProvider>
         <ParticlesCanvas/>
@@ -31,6 +33,7 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
         </div>
       </LayoutProvider>
     </Provider>
+    </SessionProvider>
     </body>
     </html>
   )

@@ -1,9 +1,26 @@
+"use client"
 import {ArrowSmallLeftIcon} from "@heroicons/react/24/outline";
 import Image from "next/image";
 import bg_admin from '@/public/bg_admin.webp'
 import Link from "next/link";
 
+import {signIn, signOut, useSession} from "next-auth/react";
+import {useState} from "react";
+
 const Login = () => {
+  const { data: session } = useSession();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const result = await signIn("credentials", {
+      redirect: false,
+      username : username,
+      password : password
+    });
+    console.log({result});
+  }
+
   return (
     <div className={"h-screen w-screen flex overflow-hidden relative"}>
       <Link
@@ -22,7 +39,10 @@ const Login = () => {
       <div className={"bg-gray-900 shadow-md px-8 pt-6 pb-8 mb-4 w-full md:w-3/5 h-screen"}>
         <div className={"flex mt-32"}>
           <div className="w-full max-w-xs mx-auto">
-            <form className="bg-gray-900 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form
+              className="bg-gray-900 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+              onSubmit={handleSubmit}
+            >
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                   Username
@@ -31,7 +51,10 @@ const Login = () => {
                   className="border text-sm rounded-lg block w-full py-2 px-3 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:shadow-outline"
                   id="username"
                   type="text"
-                  placeholder="Username"/>
+                  placeholder="Username"
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                />
               </div>
               <div className="mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
@@ -42,13 +65,15 @@ const Login = () => {
                   id="password"
                   type="password"
                   placeholder="******************"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
                 <p className="text-red-500 text-xs italic">Please choose a password.</p>
               </div>
               <div className="flex items-center justify-between">
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="button">
+                  type="submit">
                   Sign In
                 </button>
               </div>
