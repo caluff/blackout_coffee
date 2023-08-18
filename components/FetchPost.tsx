@@ -4,7 +4,6 @@ import CustomImage from "@/components/CustomImage";
 const xata = getXataClient();
 const FetchPost = async ({idTitle}: { idTitle: string }) => {
   const records = await xata.db.offer.getAll()
-  console.log(records)
   return records.map((record) => (
     idTitle === record.category && (
       <div

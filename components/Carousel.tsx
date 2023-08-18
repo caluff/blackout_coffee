@@ -53,7 +53,6 @@ const Carousel = () => {
             >
               {images.map((image, index) => {
                 if (index === currentSlide) {
-                  console.log(image)
                   return (
                     <Link key={index} href={""}
                           className="flex h-[36rem] flex-col justify-between bg-transparent p-6 overflow-hidden animate-fade-left animate-delay-[0ms] animate-ease-in-out">

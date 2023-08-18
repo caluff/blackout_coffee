@@ -4,12 +4,16 @@ import userReducer from "@/features/user/userSlice";
 import sidebarReducer from "@/features/sidebar/sidebarSlice"
 import offerReducer from "@/features/offer/offerSlice"
 import currentSectionReducer from "@/features/currentSection/currentSectionSlice"
+import loginModalReducer from "@/features/loginModal/loginModalSlice"
+
 export const store = configureStore({
   reducer: {
     user: userReducer,
     sidebar: sidebarReducer,
     offer: offerReducer,
     currentSection:currentSectionReducer,
+    loginModal: loginModalReducer,
+
   },
 })
 

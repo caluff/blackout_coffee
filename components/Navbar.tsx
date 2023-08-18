@@ -7,11 +7,17 @@ import Blackhole from '@/public/black-hole.svg'
 import {categoriesFetch} from "@/constants";
 
 import {useAppDispatch, useAppSelector} from '@/utils/hooks'
-import {trueSidebar} from "@/features/sidebar/sidebarSlice";
+import {trueSidebar} from "@/features/sidebar/sidebarSlice"
+import {onCurrentSection} from "@/features/currentSection/currentSectionSlice"
+import {falseOffer} from "@/features/offer/offerSlice";
 
 const Navbar = () => {
   const valueCurrentSection = useAppSelector(state=>state.currentSection.value)
   const dispatch = useAppDispatch()
+  const handleClick = () => {
+    dispatch(falseOffer())
+    dispatch(onCurrentSection())
+  }
   return (
     <div
       className={"fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-lg flex-none transition-colors duration-500 lg:border-b border-slate-50/[0.06] bg-transparent"}>
@@ -21,9 +27,10 @@ const Navbar = () => {
             <Link
               className={"mr-3 flex w-[2.0625] overflow-hidden md:w-auto"}
               href={"/"}
+              onClick={handleClick}
             >
               <Image
-                className="w-auto h-6"
+                className="w-6 h-6"
                 src={Blackhole}
                 alt={"Logo Black Out"}
               />

@@ -1,7 +1,6 @@
 "use client"
 import './globals.css'
 import {Navbar, ParticlesCanvas, Sidebar} from "@/components";
-import {LayoutProvider} from "@/components/LayoutProvider";
 import {store} from '@/utils/store'
 import {Provider} from 'react-redux'
 import {SessionProvider} from "next-auth/react";
@@ -17,9 +16,8 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
     <body
       className={"relative bg-fixed bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black "}>
     <SessionProvider>
-    <Provider store={store}>
-      <LayoutProvider>
-        <ParticlesCanvas/>
+      <Provider store={store}>
+        {/*<ParticlesCanvas/>*/}
         <Navbar/>
         <div className={"overflow-hidden"}>
           <div className={"mx-auto px-4 sm:px-6 md:px-8"}>
@@ -31,8 +29,7 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
-      </LayoutProvider>
-    </Provider>
+      </Provider>
     </SessionProvider>
     </body>
     </html>

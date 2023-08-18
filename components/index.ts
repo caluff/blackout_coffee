@@ -6,8 +6,8 @@ import LinkOffer from "@/components/LinkOffer";
 import LinkOfferIn from "@/components/LinkOfferIn";
 import FetchPost from "@/components/FetchPost";
 import Nav from "@/components/Nav";
-import {LayoutProvider} from "@/components/LayoutProvider";
 import Carousel from "@/components/Carousel";
+import LoginModal from "@/components/LoginModal";
 
 export {
   ParticlesCanvas,
@@ -18,6 +18,6 @@ export {
   LinkOfferIn,
   FetchPost,
   Nav,
-  LayoutProvider,
   Carousel,
+  LoginModal,
 }

@@ -21,12 +21,7 @@ const tables = [
     name: "users",
     columns: [
       { name: "name", type: "string", notNull: true, defaultValue: "admin" },
-      {
-        name: "password",
-        type: "string",
-        notNull: true,
-        defaultValue: "admin",
-      },
+      {name: "password", type: "string", notNull: true, defaultValue: "admin"},
     ],
   },
 ] as const;

@@ -1,13 +1,12 @@
 "use client"
 import Link from "next/link";
 import {ClockIcon, PhoneIcon, MapIcon, Cog6ToothIcon} from "@heroicons/react/24/outline";
-import {Carousel} from '@/components/index'
-import {NextPage} from "next";
+import {Carousel, LoginModal} from '@/components/index'
 import {trueOffer} from "@/features/offer/offerSlice";
 import {useAppDispatch} from "@/utils/hooks";
-import {setCurrentSection} from "@/features/currentSection/currentSectionSlice";
+import {trueLoginModal} from "@/features/loginModal/loginModalSlice";
 
-const Home : NextPage=()=>{
+const Home=()=>{
   const dispatch = useAppDispatch()
   function handleClick() {
     dispatch(trueOffer());
@@ -120,13 +119,14 @@ const Home : NextPage=()=>{
             </h4>
           </div>
         </div>
-        <Link
+        <button
           className={"group mb-4 relative pl-16 border-2 border-black w-32 mt-6 bg-black hover:bg-white focus:outline-none text-white hover:text-black font-semibold text-xs h-8 px-12 rounded-full flex items-center justify-center"}
-          href={"/login"}>
+          onClick={()=>dispatch(trueLoginModal())}
+        >
           <Cog6ToothIcon className="h-5 w-5 text-white absolute left-3 group-hover:text-black"/>
           Administrar
-        </Link>
-
+        </button>
+        <LoginModal/>
       </div>
     </header>
 

@@ -6,7 +6,7 @@ export interface CurrentSectionState {
 const initialState: CurrentSectionState = {
   value: "",
 }
-export const offerSlice = createSlice({
+export const currentSectionSlice = createSlice({
   name: 'CurrentSection',
   initialState,
   reducers: {
@@ -20,5 +20,5 @@ export const offerSlice = createSlice({
 })
 export const {
   setCurrentSection,
-  onCurrentSection} = offerSlice.actions
-export default offerSlice.reducer
+  onCurrentSection} = currentSectionSlice.actions
+export default currentSectionSlice.reducer
